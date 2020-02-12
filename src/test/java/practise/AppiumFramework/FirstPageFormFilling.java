@@ -25,8 +25,10 @@ import io.appium.java_client.android.AndroidElement;
 public class FirstPageFormFilling extends BaseClass {
 	
 	@Test
-	public void formFilling() throws IOException
+	public void formFilling() throws IOException, InterruptedException
 	{
+	service= startAppiumServer(4723);	
+	
 	AndroidDriver<AndroidElement> driver=capabilities("GeneralStore","DeviceName");
 	
 	driver.findElementByXPath("//android.widget.TextView[@resource-id='android:id/text1']").click();
@@ -89,6 +91,9 @@ public class FirstPageFormFilling extends BaseClass {
 	String msg=driver.findElementById("android:id/message").getText();
 	System.out.println(msg);
 	driver.findElement(By.xpath("//android.widget.Button[@text='CLOSE']")).click();
+	service.stop();
+	//TODO's thie code needs to be made more generic as emulaor value is hard coded here
+	//	closeEmulator("emulator");
 	}
 	
 }
