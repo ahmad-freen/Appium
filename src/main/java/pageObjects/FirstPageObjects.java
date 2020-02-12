@@ -17,4 +17,10 @@ public class FirstPageObjects
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id='android:id/text1']")
 	public WebElement openCountryDropdown;
+	
+	@
+	public WebElement getCountry()
+	{
+		return openCountryDropdown;
+	}
 }
