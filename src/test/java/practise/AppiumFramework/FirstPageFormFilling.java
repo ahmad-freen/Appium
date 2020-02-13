@@ -8,7 +8,10 @@ import java.net.MalformedURLException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -16,6 +19,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import static java.time.Duration.ofSeconds;
 
+import java.io.File;
 import java.io.IOException;
 
 import io.appium.java_client.TouchAction;
@@ -27,10 +31,11 @@ public class FirstPageFormFilling extends BaseClass {
 	@Test
 	public void formFilling() throws IOException, InterruptedException
 	{
-	service= startAppiumServer(4723);	
+	service= startServer();	
 	
-	AndroidDriver<AndroidElement> driver=capabilities("GeneralStore","DeviceName");
-	
+	AndroidDriver<AndroidElement> driver=capabilities("appName");
+	File srcfle=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
 	driver.findElementByXPath("//android.widget.TextView[@resource-id='android:id/text1']").click();
 	
 	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Bahamas\"));").click();
@@ -39,6 +44,7 @@ public class FirstPageFormFilling extends BaseClass {
 	
 	//To Verify Toast Message
 	String sbc= driver.findElementByXPath("//android.widget.Toast[1]").getAttribute("name");
+	BaseClass.getScreenshot("toastmsg");
 	System.out.println(sbc);
 	
 	driver.findElement(By.className("android.widget.EditText")).sendKeys("Rizwan");
@@ -91,7 +97,7 @@ public class FirstPageFormFilling extends BaseClass {
 	String msg=driver.findElementById("android:id/message").getText();
 	System.out.println(msg);
 	driver.findElement(By.xpath("//android.widget.Button[@text='CLOSE']")).click();
-	service.stop();
+//	service.stop();
 	//TODO's thie code needs to be made more generic as emulaor value is hard coded here
 	//	closeEmulator("emulator");
 	}
