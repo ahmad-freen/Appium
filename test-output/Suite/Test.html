@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 12 08:58:13 IST 2020</td>
+<td>Started on:</td><td>Thu Feb 13 09:41:11 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>124 seconds (124889 ms)</td>
+<tr><td>Total time:</td><td>63 seconds (63830 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,35 +75,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='practise.AppiumFramework.FirstPageFormFilling.formFilling()'><b>formFilling</b><br>Test class: practise.AppiumFramework.FirstPageFormFilling</td>
-<td><div><pre>io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: The local appium server has not been started. The given Node.js executable: C:\Program Files\nodejs\node.exe Arguments: [C:\Users\Afreen\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0] 
-Process output: [35m[Appium][39m Welcome to Appium v1.15.1
-[35m[Appium][39m Appium REST http interface listener started on 0.0.0.0:4723
-
-
-	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:161)
-	at practise.AppiumFramework.BaseClass.startAppiumServer(BaseClass.java:40)
-	at practise.AppiumFramework.FirstPageFormFilling.formFilling(FirstPageFormFilling.java:30)
+<td title='practise.AppiumFramework.TestClass.secondMethod()'><b>secondMethod</b><br>Test class: practise.AppiumFramework.TestClass</td>
+<td><div><pre>java.lang.AssertionError: expected [Helloo] but found [Hello]
+	at practise.AppiumFramework.TestClass.secondMethod(TestClass.java:17)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://0.0.0.0:4723/wd/hub/status] to be available after 120013 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at io.appium.java_client.service.local.AppiumDriverLocalService.ping(AppiumDriverLocalService.java:125)
-	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:148)
-	... 30 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 32 more
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace231311211", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace231311211'><pre>io.appium.java_client.service.local.AppiumServerHasNotBeenStartedLocallyException: The local appium server has not been started. The given Node.js executable: C:\Program Files\nodejs\node.exe Arguments: [C:\Users\Afreen\AppData\Roaming\npm\node_modules\appium\build\lib\main.js, --port, 4723, --address, 0.0.0.0] 
-Process output: [35m[Appium][39m Welcome to Appium v1.15.1
-[35m[Appium][39m Appium REST http interface listener started on 0.0.0.0:4723
-
-
-	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:161)
-	at practise.AppiumFramework.BaseClass.startAppiumServer(BaseClass.java:40)
-	at practise.AppiumFramework.FirstPageFormFilling.formFilling(FirstPageFormFilling.java:30)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1028811481", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1028811481'><pre>java.lang.AssertionError: expected [Helloo] but found [Hello]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at org.testng.Assert.assertEquals(Assert.java:585)
+	at practise.AppiumFramework.TestClass.secondMethod(TestClass.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -132,19 +115,27 @@ Process output: [35m[Appium][39m Welcome to Appium v1.15.1
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.net.UrlChecker$TimeoutException: Timed out waiting for [http://0.0.0.0:4723/wd/hub/status] to be available after 120013 ms
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:100)
-	at io.appium.java_client.service.local.AppiumDriverLocalService.ping(AppiumDriverLocalService.java:125)
-	at io.appium.java_client.service.local.AppiumDriverLocalService.start(AppiumDriverLocalService.java:148)
-	... 30 more
-Caused by: java.util.concurrent.TimeoutException
-	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:204)
-	at com.google.common.util.concurrent.SimpleTimeLimiter.callWithTimeout(SimpleTimeLimiter.java:156)
-	at org.openqa.selenium.net.UrlChecker.waitUntilAvailable(UrlChecker.java:75)
-	... 32 more
 </pre></div></td>
-<td>124</td>
-<td>practise.AppiumFramework.FirstPageFormFilling@41fecb8b</td></tr>
+<td>0</td>
+<td>practise.AppiumFramework.TestClass@1a4013</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='practise.AppiumFramework.TestClass.firstMethod()'><b>firstMethod</b><br>Test class: practise.AppiumFramework.TestClass</td>
+<td></td>
+<td>0</td>
+<td>practise.AppiumFramework.TestClass@1a4013</td></tr>
+<tr>
+<td title='practise.AppiumFramework.FirstPageFormFilling.formFilling()'><b>formFilling</b><br>Test class: practise.AppiumFramework.FirstPageFormFilling</td>
+<td></td>
+<td>63</td>
+<td>practise.AppiumFramework.FirstPageFormFilling@1cbb87f3</td></tr>
 </table><p>
 </body>
 </html>
