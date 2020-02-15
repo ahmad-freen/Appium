@@ -14,6 +14,6 @@ public class TestClass {
 	{
 		String abc= "Hello";
 		System.out.println("i am running from test class 2");
-		Assert.assertEquals(abc, "Helloo");
+		Assert.assertEquals(abc, "Hello");
 	}
 }

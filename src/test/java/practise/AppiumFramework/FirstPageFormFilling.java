@@ -5,17 +5,17 @@ import static io.appium.java_client.touch.LongPressOptions.longPressOptions;
 import static io.appium.java_client.touch.offset.ElementOption.element;
 
 import java.net.MalformedURLException;
+import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import static java.time.Duration.ofSeconds;
 
@@ -25,9 +25,11 @@ import java.io.IOException;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class FirstPageFormFilling extends BaseClass {
-	
+	AndroidDriver<AndroidElement> driver;
 	@Test
 	public void formFilling() throws IOException, InterruptedException
 	{
@@ -35,16 +37,14 @@ public class FirstPageFormFilling extends BaseClass {
 	
 	AndroidDriver<AndroidElement> driver=capabilities("appName");
 	File srcfle=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-
+	
 	driver.findElementByXPath("//android.widget.TextView[@resource-id='android:id/text1']").click();
-	
-	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Bahamas\"));").click();
-	
+	Utilities util =new Utilities(driver);
+	util.scrollToView("Bahamas");
+	driver.findElement(By.xpath("//*[@text='Bahamas']")).click();
 	driver.findElementByAndroidUIAutomator("text(\"Let's  Shop\")").click();
-	
 	//To Verify Toast Message
 	String sbc= driver.findElementByXPath("//android.widget.Toast[1]").getAttribute("name");
-	BaseClass.getScreenshot("toastmsg");
 	System.out.println(sbc);
 	
 	driver.findElement(By.className("android.widget.EditText")).sendKeys("Rizwan");
@@ -63,10 +63,7 @@ public class FirstPageFormFilling extends BaseClass {
 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='Products']")));
 	
 	//Product Page
-	
-	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"PG 3\"));");
-//	driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector().resourceId(\"com.androidsample.generalstore:id/rvProductList\"))."
-//			+ "scrollIntoView(new UiSelector().textMatches(\"LeBron Soldier 12\").instance(0))");
+	util.scrollToView("PG 3");
 	int count= driver.findElementsById("com.androidsample.generalstore:id/productName").size();
 	System.out.println(count);
 	TouchAction ta=new TouchAction(driver);
@@ -97,10 +94,20 @@ public class FirstPageFormFilling extends BaseClass {
 	String msg=driver.findElementById("android:id/message").getText();
 	System.out.println(msg);
 	driver.findElement(By.xpath("//android.widget.Button[@text='CLOSE']")).click();
-//	service.stop();
-	//TODO's thie code needs to be made more generic as emulaor value is hard coded here
+	driver.findElementById("com.androidsample.generalstore:id/btnProceed").click();
+	
+	util.getContextA();
+	driver.pressKey(new KeyEvent(AndroidKey.BACK));
+	Thread.sleep(2000);
+	Set<String> contextsr= driver.getContextHandles();
+	System.out.println(contextsr);
+	driver.context("NATIVE_APP");
+
+//	service.stop();	
+	//TODO's this code needs to be made more generic as emulator value is hard coded here
 	//	closeEmulator("emulator");
 	}
+	
 	
 }
 

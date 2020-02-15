@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 65.349 s <<< FAILURE! - in TestSuite
+secondMethod(practise.AppiumFramework.TestClass)  Time elapsed: 0.628 s  <<< FAILURE!
+java.lang.AssertionError: expected [Helloo] but found [Hello]
+	at practise.AppiumFramework.TestClass.secondMethod(TestClass.java:17)
+

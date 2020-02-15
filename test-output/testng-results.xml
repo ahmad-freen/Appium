@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-02-13T09:41:11 IST" name="Suite" finished-at="2020-02-13T09:42:15 IST" duration-ms="63830">
+  <suite started-at="2020-02-15T15:55:13 IST" name="Default suite" finished-at="2020-02-15T15:56:06 IST" duration-ms="52519">
     <groups>
     </groups>
-    <test started-at="2020-02-13T09:41:11 IST" name="Test" finished-at="2020-02-13T09:42:15 IST" duration-ms="63830">
-      <class name="practise.AppiumFramework.TestClass">
-        <test-method signature="firstMethod()[pri:0, instance:practise.AppiumFramework.TestClass@1a4013]" started-at="2020-02-13T09:42:14 IST" name="firstMethod" finished-at="2020-02-13T09:42:14 IST" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- firstMethod -->
-        <test-method signature="secondMethod()[pri:0, instance:practise.AppiumFramework.TestClass@1a4013]" started-at="2020-02-13T09:42:14 IST" name="secondMethod" finished-at="2020-02-13T09:42:14 IST" duration-ms="3" status="FAIL">
-          <exception class="java.lang.AssertionError">
+    <test started-at="2020-02-15T15:55:13 IST" name="Default test" finished-at="2020-02-15T15:56:06 IST" duration-ms="52519">
+      <class name="practise.AppiumFramework.FirstPageFormFilling">
+        <test-method signature="formFilling()[pri:0, instance:practise.AppiumFramework.FirstPageFormFilling@4e096385]" started-at="2020-02-15T15:55:13 IST" name="formFilling" finished-at="2020-02-15T15:56:06 IST" duration-ms="52468" status="FAIL">
+          <exception class="java.lang.IndexOutOfBoundsException">
             <message>
-              <![CDATA[expected [Helloo] but found [Hello]]]>
+              <![CDATA[Index 2 out of bounds for length 2]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Helloo] but found [Hello]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.assertEqualsImpl(Assert.java:136)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:575)
-at org.testng.Assert.assertEquals(Assert.java:585)
-at practise.AppiumFramework.TestClass.secondMethod(TestClass.java:17)
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 2 out of bounds for length 2
+at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+at java.base/java.util.Objects.checkIndex(Objects.java:372)
+at java.base/java.util.ArrayList.get(ArrayList.java:458)
+at practise.AppiumFramework.FirstPageFormFilling.formFilling(FirstPageFormFilling.java:79)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -54,17 +50,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- secondMethod -->
-      </class> <!-- practise.AppiumFramework.TestClass -->
-      <class name="practise.AppiumFramework.FirstPageFormFilling">
-        <test-method signature="formFilling()[pri:0, instance:practise.AppiumFramework.FirstPageFormFilling@1cbb87f3]" started-at="2020-02-13T09:41:11 IST" name="formFilling" finished-at="2020-02-13T09:42:14 IST" duration-ms="63177" status="PASS">
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- formFilling -->
       </class> <!-- practise.AppiumFramework.FirstPageFormFilling -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
