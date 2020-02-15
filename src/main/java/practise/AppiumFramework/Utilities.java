@@ -26,7 +26,7 @@ public class Utilities
             	            	
             	if (!contextName.equals("NATIVE_APP") ) 
             		{	            		
-            			System.out.println(contextName+"A");
+            			System.out.println(contextName);
             			driver.context(contextName); //set context to WEBVIEW_
             			break;
             		}
